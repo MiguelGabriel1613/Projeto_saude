@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Saúde</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body{
+  visibility: hidden;
+}
+
+@media (max-width: 1000px) {
+    body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E0F0FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    visibility: visible;
+}
+
+.app-container {
+    width: 350px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.header-card {
+    background: linear-gradient(135deg, #5D9CEC, #2C82C9);
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-photo {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.main-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.menu-item {
+    background-color: #F3F3F3;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.menu-item:hover {
+    background-color: #e0e0e0;
+}
+
+.menu-item img {
+    width: 35px;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-item span {
+    font-size: 12px;
+    color: #777;
+}
+}
+</style>
+<body>
+    <div class="app-container">
+        <div class="header-card">
+            <div class="user-info">
+                <div class="user-photo"></div>
+                <div class="user-details">
+                    <h2>Alguem</h2>
+                    <p>Nº Cartão: ***********</p>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="4d1743_ca25df06c2b045f491a6bf4fc4c822b6_mv2-removebg-preview.png" alt="Logo DigiSUS">
+            </div>
+        </div>
+        <div class="main-menu">
+            <a href="" class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9ip4KwE_oZowqob5_bxrKJZGbcuARSBG3_A&s" alt="Minha Saúde">
+                <p>Minha Saúde</p>
+                <span>Seu histórico de saúde</span>
+            </a>
+            <a href="index.html" class="menu-item">
+                <img src="https://media.discordapp.net/attachments/664247341410287627/1295562156825251870/Screenshot_2024-10-14-22-39-52-579_com.google.android.googlequicksearchbox-edit.jpg?ex=670f19c8&is=670dc848&hm=e607265df4da20122f6312c3aac740a49f5ee0aad5005362e3fd34afa7a89852&=&format=webp&width=465&height=566" alt="Serviços de Saúde">
+                <p>Serviços de Saúde</p>
+                <span>Localize um próximo a você</span>
+            </a>
+            <a href="#medicamentos" class="menu-item">
+                <img src="https://media.discordapp.net/attachments/664247341410287627/1295562156623790190/fb99c079-f222-4c79-b89d-fcca2244a6d8.png?ex=670f19c8&is=670dc848&hm=e6f6aa29609ae964e7ec57f3607f04c2d92f4d2c555fb9ca79a869810e0ede66&=&format=webp&quality=lossless&width=550&height=550" alt="Medicamentos">
+                <p>Medicamentos</p>
+                <span>Aqui tem Farmácia Popular e fitoterápicos</span>
+            </a>
+            <a href="#atendimento-sus" class="menu-item">
+                <img src="https://media.discordapp.net/attachments/664247341410287627/1295562920549289995/icn-hospital.png?ex=670f1a7e&is=670dc8fe&hm=536d59d689aa66747fa02ee69efd562b2db9ee8f0d26998c89676de9a3931c32&=&format=webp&quality=lossless&width=110&height=110" alt="Atendimento SUS">
+                <p>Atendimento SUS</p>
+                <span>Histórico de atendimentos</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

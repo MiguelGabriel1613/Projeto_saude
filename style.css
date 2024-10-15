@@ -1,0 +1,320 @@
+body{
+  visibility: hidden;
+}
+
+@media (max-width: 1000px) {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  visibility: visible;
+}
+
+.main-header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.search-and-profile {
+  display: flex;
+  align-items: center;
+}
+
+.search-container {
+  margin-right: 15px;
+}
+
+.user-profile-link {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.user-name {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.fa-chevron-down {
+  font-size: 12px;
+  color: #666;
+}
+
+#searchInput {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  font-size: 1rem;
+}
+
+#searchButton {
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0 25px 25px 0;
+  font-size: 1rem;
+}
+
+.location-header {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  display: none;
+}
+
+.location-header p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.location-cep {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px); /* Ajuste este valor de acordo com a altura do seu header */
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.initial-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.location-button-container {
+  margin: 2rem 0;
+}
+
+.location-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  width: 120px;
+  height: 120px;
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.location-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.initial-view h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.initial-view p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  max-width: 400px;
+}
+
+.hospital-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hospital-card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hospital-card:hover {
+  transform: translateY(-5px);
+}
+
+.hospital-details {
+  display: none;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.back-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+#hospitalMap {
+  height: 300px;
+  margin-top: 1rem;
+}
+
+.loading-indicator {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.schedule-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.schedule-button:hover {
+  background-color: #45a049;
+}
+
+.schedule-button i {
+  margin-right: 5px;
+}
+
+.appointment-date {
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.appointment-input {
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 200px;
+}
+
+#appointmentForm {
+  margin-top: 10px;
+}
+
+#confirmAppointment {
+  margin-top: 10px;
+  background-color: #3498db;
+}
+
+#confirmAppointment:hover {
+  background-color: #2980b9;
+}
+
+.appointment-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  color: #155724;
+  font-size: 16px;
+}
+
+/* Ajuste o layout para telas menores */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-and-profile {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .search-container {
+    margin-right: 0;
+  }
+
+  .user-profile {
+    margin-top: 10px;
+  }
+}
+}
