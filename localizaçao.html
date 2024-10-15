@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saúde Próxima</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header id="mainHeader" class="main-header">
+    <div class="header-content">
+      <h1>Saúde Próxima</h1>
+      <div class="search-and-profile">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Pesquisar hospitais...">
+          <button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+        <a href="perfil.html" class="user-profile-link">
+          <img src="https://portal.estrategia.com/wp-content/uploads/2023/08/reckw88MqkkxrcumE-sus-emed-bg.jpg" alt="Foto do usuário" class="user-avatar">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div id="locationHeader" class="location-header">
+    <p>
+      <i class="fas fa-map-marker-alt"></i> 
+      <span id="locationText"></span>
+    </p>
+  </div>
+
+  <main class="main-content">
+    <div id="initialView" class="initial-view">
+      <h2>Encontre hospitais próximos a você</h2>
+      <div class="location-button-container">
+        <button id="locationButton" class="location-button">
+          <i class="fas fa-map-marker-alt"></i>
+        </button>
+      </div>
+      <p>Clique no botão acima para usar sua localização atual</p>
+    </div>
+
+    <div id="hospitalList" class="hospital-list"></div>
+
+    <div id="hospitalDetails" class="hospital-details">
+      <button id="backButton" class="back-button"><i class="fas fa-arrow-left"></i> Voltar</button>
+      <div id="detailsContent"></div>
+      <button id="scheduleButton" class="schedule-button"><i class="fas fa-calendar-alt"></i> Agendar consulta</button>
+      <div id="appointmentForm" style="display: none;">
+        <input type="date" id="appointmentDate" class="appointment-input">
+        <select id="appointmentTime" class="appointment-input">
+          <option value="">Selecione um horário</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+        </select>
+        <button id="confirmAppointment" class="schedule-button">Confirmar</button>
+      </div>
+      <div id="hospitalMap"></div>
+    </div>
+  </main>
+
+  <div id="loadingIndicator" class="loading-indicator">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API_AQUI"></script>
+  <script src="script.js"></script>
+</body>
+</html>
